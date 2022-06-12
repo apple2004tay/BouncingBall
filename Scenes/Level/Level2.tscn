@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/block_square.png" type="Texture" id=1]
+
+[sub_resource type="PhysicsMaterial" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 640 )
+
+[sub_resource type="PhysicsMaterial" id=7]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 96, 32 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 128, 32 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 96, 32 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 64, 32 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 224, 32 )
+
+[node name="Level2" type="Node2D"]
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2( 32, 0 )
+physics_material_override = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="LeftWall"]
+position = Vector2( 1, 640 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 1280 )
+region_filter_clip = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2( 1, 640 )
+shape = SubResource( 1 )
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2( 688, 0 )
+physics_material_override = SubResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="RightWall"]
+position = Vector2( 1, 640 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 1280 )
+region_filter_clip = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2( 1, 640 )
+shape = SubResource( 1 )
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2( 486, 924 )
+physics_material_override = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Platform"]
+position = Vector2( 0, -1 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 192, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+shape = SubResource( 10 )
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2( 321, 605 )
+physics_material_override = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Platform2"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+shape = SubResource( 11 )
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2( 493, 291 )
+physics_material_override = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Platform3"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 192, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+shape = SubResource( 12 )
+
+[node name="Platform4" type="StaticBody2D" parent="."]
+position = Vector2( 659, 0 )
+physics_material_override = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Platform4"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 128, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
+shape = SubResource( 9 )
+
+[node name="Platform5" type="StaticBody2D" parent="."]
+position = Vector2( 224, 0 )
+physics_material_override = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Platform5"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 448, 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
+shape = SubResource( 13 )

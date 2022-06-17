@@ -1,10 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Level/Level1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/ball_blue_large.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Level/Level2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Level/Level3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/NotoSansTC-Regular.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://Scripts/TimerLabel.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=5]
+size = 35
+outline_size = 1
+font_data = ExtResource( 7 )
 
 [sub_resource type="PhysicsMaterial" id=4]
 bounce = 0.7
@@ -14,7 +22,20 @@ radius = 32.0
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 1 )
-_level_secnes = [ ExtResource( 2 ), ExtResource( 5 ) ]
+_level_secnes = [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ) ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 170.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "00:00:00"
+script = ExtResource( 8 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -25,8 +46,9 @@ current = true
 [node name="Player" type="RigidBody2D" parent="."]
 position = Vector2( 130, 1110 )
 z_index = 1
+collision_mask = 2
 physics_material_override = SubResource( 4 )
-gravity_scale = 3.0
+gravity_scale = 5.0
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Player"]

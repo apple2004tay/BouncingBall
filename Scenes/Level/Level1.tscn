@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/block_square.png" type="Texture" id=1]
+[ext_resource path="res://Assets/NotoSansTC-Regular.otf" type="DynamicFontData" id=2]
 
 [sub_resource type="PhysicsMaterial" id=5]
 
@@ -14,13 +15,30 @@ extents = Vector2( 360, 64 )
 
 [sub_resource type="PhysicsMaterial" id=7]
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 160, 32 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 160, 32 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 160, 32 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 160, 32 )
+
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 158, 32 )
+extents = Vector2( 126, 32 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 40
+font_data = ExtResource( 2 )
 
 [node name="Level1" type="Node2D"]
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 position = Vector2( 32, 0 )
+collision_layer = 2
 physics_material_override = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="LeftWall"]
@@ -36,6 +54,7 @@ shape = SubResource( 1 )
 
 [node name="RightWall" type="StaticBody2D" parent="."]
 position = Vector2( 688, 0 )
+collision_layer = 2
 physics_material_override = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="RightWall"]
@@ -50,6 +69,8 @@ position = Vector2( 1, 640 )
 shape = SubResource( 1 )
 
 [node name="Bottom" type="StaticBody2D" parent="."]
+position = Vector2( -1, 0 )
+collision_layer = 2
 physics_material_override = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="Bottom"]
@@ -65,6 +86,7 @@ shape = SubResource( 2 )
 
 [node name="Platform" type="StaticBody2D" parent="."]
 position = Vector2( 227, 864 )
+collision_layer = 2
 physics_material_override = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Platform"]
@@ -74,10 +96,11 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 320, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 
 [node name="Platform2" type="StaticBody2D" parent="."]
 position = Vector2( 413, 613 )
+collision_layer = 2
 physics_material_override = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Platform2"]
@@ -86,10 +109,11 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 320, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
-shape = SubResource( 8 )
+shape = SubResource( 11 )
 
 [node name="Platform3" type="StaticBody2D" parent="."]
 position = Vector2( 310, 350 )
+collision_layer = 2
 physics_material_override = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Platform3"]
@@ -98,10 +122,11 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 320, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
-shape = SubResource( 8 )
+shape = SubResource( 12 )
 
 [node name="Platform4" type="StaticBody2D" parent="."]
-position = Vector2( 562, -2 )
+position = Vector2( 562, 0 )
+collision_layer = 2
 physics_material_override = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Platform4"]
@@ -110,16 +135,27 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 320, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
-shape = SubResource( 8 )
+shape = SubResource( 13 )
 
 [node name="Platform5" type="StaticBody2D" parent="."]
-position = Vector2( 160, -3 )
+position = Vector2( 128, 0 )
+collision_layer = 2
 physics_material_override = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Platform5"]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 320, 64 )
+region_rect = Rect2( 0, 0, 256, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
 shape = SubResource( 8 )
+
+[node name="LevelLabel" type="Label" parent="."]
+margin_left = 210.0
+margin_top = 54.0
+margin_right = 510.0
+margin_bottom = 154.0
+custom_fonts/font = SubResource( 9 )
+text = "Level 1"
+align = 1
+valign = 1

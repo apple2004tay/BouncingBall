@@ -12,7 +12,11 @@ config_version=4
 
 config/name="Bouncing Ball"
 run/main_scene="res://Scenes/Game.tscn"
-config/icon="res://Assets/icon.png"
+config/icon="res://Assets/ball_blue_large.png"
+
+[autoload]
+
+Test="*res://Scripts/Test.cs"
 
 [display]
 
@@ -21,6 +25,8 @@ window/size/height=1280
 window/size/resizable=false
 window/dpi/allow_hidpi=true
 window/handheld/orientation="portrait"
+window/stretch/mode="2d"
+window/stretch/aspect="keep_width"
 
 [layer_names]
 

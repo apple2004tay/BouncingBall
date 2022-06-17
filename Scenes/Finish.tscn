@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Finish.gd" type="Script" id=1]
+[ext_resource path="res://Assets/NotoSansTC-Regular.otf" type="DynamicFontData" id=2]
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 100, 30 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="Finish" type="Area2D"]
+position = Vector2( 360, 33 )
+collision_layer = 4
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 15 )
+
+[node name="LevelLabel" type="Label" parent="CollisionShape2D"]
+margin_left = -60.0
+margin_top = -30.0
+margin_right = 60.0
+margin_bottom = 30.0
+custom_fonts/font = SubResource( 14 )
+text = "Finish"
+align = 1
+valign = 1

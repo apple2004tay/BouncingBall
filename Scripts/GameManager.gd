@@ -3,6 +3,7 @@ extends Node2D
 export(Array, PackedScene) var _level_secnes
 
 onready var _timerLabel = get_node("CanvasLayer/TimerLabel")
+onready var _result = get_node("CanvasLayer/Result")
 onready var _player = get_node("Player")
 onready var _camera = get_node("Camera2D")
 onready var _tween = get_node("Tween")
@@ -73,4 +74,6 @@ func _create_pre_level_scene(index):
 	add_child(_pre_level_scene)
 	
 func set_game_over():
-	pass
+	_timerLabel.stop()
+	_result.visible = true
+	_result.set_time(_timerLabel.text)

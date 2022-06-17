@@ -10,4 +10,4 @@ func set_time(time_text):
 	_time_label.text = time_text
 	
 func _restart_game():
-	get_tree().change_scene("res://Scenes/Game.tscn")
+	get_tree().change_scene("res://Scenes/BouncingBallGame.tscn")

@@ -20,8 +20,8 @@ func _ready():
 	_current_level_scene = get_node("Level1")
 	_create_next_level_scene(_current_level_scene_index + 1)
 	_timerLabel.start()
-	
-func _physics(delta):
+
+func _process(delta):
 	if _player.position.y < _next_level_height:
 		_move_to_next_level()
 	elif _player.position.y > _pre_level_height:

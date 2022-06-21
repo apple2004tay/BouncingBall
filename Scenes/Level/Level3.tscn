@@ -14,7 +14,7 @@ extents = Vector2( 32, 640 )
 extents = Vector2( 96, 32 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 96, 32 )
+extents = Vector2( 128, 32 )
 
 [sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 96, 32 )
@@ -76,20 +76,20 @@ region_rect = Rect2( 0, 0, 192, 64 )
 shape = SubResource( 10 )
 
 [node name="Platform2" type="StaticBody2D" parent="."]
-position = Vector2( 508, 675 )
+position = Vector2( 477, 673 )
 collision_layer = 2
 physics_material_override = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Platform2"]
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 192, 64 )
+region_rect = Rect2( 0, 0, 256, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
 shape = SubResource( 11 )
 
 [node name="Platform3" type="StaticBody2D" parent="."]
-position = Vector2( 240, 353 )
+position = Vector2( 355, 355 )
 collision_layer = 2
 physics_material_override = SubResource( 7 )
 

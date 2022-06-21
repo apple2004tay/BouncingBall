@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Level/Level2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Level/Level3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/TimerLabel.gd" type="Script" id=9]
+[ext_resource path="res://Assets/star.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=5]
 size = 35
@@ -33,7 +34,7 @@ font_data = ExtResource( 4 )
 [sub_resource type="PhysicsMaterial" id=4]
 bounce = 0.6
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=10]
 radius = 32.0
 
 [node name="GameManager" type="Node2D"]
@@ -95,11 +96,12 @@ current = true
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Player" type="RigidBody2D" parent="."]
-position = Vector2( 130, 1110 )
+position = Vector2( 130, 1114 )
 z_index = 1
 collision_mask = 6
 physics_material_override = SubResource( 4 )
 gravity_scale = 10.0
+linear_damp = 0.5
 script = ExtResource( 2 )
 power = 10
 
@@ -107,6 +109,10 @@ power = 10
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 3 )
+shape = SubResource( 10 )
+
+[node name="StoppingTip" type="Sprite" parent="Player"]
+position = Vector2( 0, -60 )
+texture = ExtResource( 10 )
 
 [node name="Level1" parent="." instance=ExtResource( 5 )]

@@ -74,6 +74,8 @@ func _create_pre_level_scene(index):
 	add_child(_pre_level_scene)
 	
 func set_game_over():
+	set_process(false)
+	_player.queue_free()
 	_timerLabel.stop()
 	_result.visible = true
 	_result.set_time(_timerLabel.text)

@@ -17,14 +17,14 @@ func _on_body_entered(body):
 	_player.enableControl = false
 
 	_tween.interpolate_property(_player, "scale", Vector2.ONE, Vector2.ZERO, 0.5)
-	_tween.interpolate_property(_player, "position", _player.position, position, 0.2)
+	_tween.interpolate_property(_player, "position", _player.position, global_position, 0.2)
 	_tween.connect("tween_all_completed", self, "_on_entry_anim_completed")
 	_tween.start()
 	
 func _on_entry_anim_completed():
 	_tween.disconnect("tween_all_completed", self, "_on_entry_anim_completed")
 	
-	_player.teleport_pos = _black_hole_exit.position
+	_player.teleport_pos = _black_hole_exit.global_position
 	_player.teleporting = true
 	
 	_tween.interpolate_property(_player, "scale", Vector2.ZERO, Vector2.ONE, 0.5)

@@ -1,7 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/block_square.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Finish.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/BlackHoleEntry.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/BlackHoleExit.tscn" type="PackedScene" id=4]
 
 [sub_resource type="PhysicsMaterial" id=5]
 
@@ -128,3 +130,14 @@ region_rect = Rect2( 0, 0, 256, 64 )
 shape = SubResource( 13 )
 
 [node name="Finish" parent="." instance=ExtResource( 2 )]
+
+[node name="BlackHoleEntry" parent="." instance=ExtResource( 3 )]
+position = Vector2( 231, 529 )
+_black_hole_exit_path = NodePath("../BlackHoleExit")
+
+[node name="BlackHoleExit" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 1035 )
+
+[node name="BlackHoleEntry2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 445, 134 )
+_black_hole_exit_path = NodePath("../BlackHoleExit")

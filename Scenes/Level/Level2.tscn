@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/block_square.png" type="Texture" id=1]
 [ext_resource path="res://Assets/NotoSansTC-Regular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/BlackHoleEntry.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/BlackHoleExit.tscn" type="PackedScene" id=4]
 
 [sub_resource type="PhysicsMaterial" id=5]
 
@@ -138,3 +140,10 @@ custom_fonts/font = SubResource( 14 )
 text = "Level 2"
 align = 1
 valign = 1
+
+[node name="BlackHoleEntry" parent="." instance=ExtResource( 3 )]
+position = Vector2( 170, 311 )
+_black_hole_exit_path = NodePath("../BlackHoleExit")
+
+[node name="BlackHoleExit" parent="." instance=ExtResource( 4 )]
+position = Vector2( 277, 927 )

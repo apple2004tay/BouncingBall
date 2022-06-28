@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Scenes/Level/Level3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/TimerLabel.gd" type="Script" id=9]
 [ext_resource path="res://Assets/star.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/BlackHoleEntry.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/BlackHoleExit.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=5]
 size = 35
@@ -116,3 +118,10 @@ position = Vector2( 0, -60 )
 texture = ExtResource( 10 )
 
 [node name="Level1" parent="." instance=ExtResource( 5 )]
+
+[node name="BlackHoleEntry" parent="." instance=ExtResource( 11 )]
+position = Vector2( 560, 875 )
+_black_hole_exit_path = NodePath("../BlackHoleExit")
+
+[node name="BlackHoleExit" parent="." instance=ExtResource( 12 )]
+position = Vector2( 229, 181 )

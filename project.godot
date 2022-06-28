@@ -32,6 +32,7 @@ window/stretch/aspect="keep"
 2d_render/layer_1="Player"
 2d_render/layer_2="Platform"
 2d_render/layer_3="Finish"
+2d_render/layer_4="BlackHole"
 
 [physics]
 

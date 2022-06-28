@@ -13,16 +13,22 @@ var _stopping : bool
 var _dragging : bool
 
 export var power : int = 5
+var enableControl : bool = true
+var teleporting : bool = false
+var teleport_pos : Vector2
 
 func _physics_process(delta):
-	if linear_velocity.length() < 30:
+	if linear_velocity.length() < 30 && enableControl:
 		_stopping = true
 	else:
 		_stopping = false
 	
 	_stopping_tip.visible = _stopping
 	
-func _input(event):
+	if teleporting:
+		global_transform.origin = teleport_pos
+	
+func _input(event):	
 	if event is InputEventMouseButton:
 		var pos = get_global_mouse_position()
 		
@@ -52,3 +58,9 @@ func _draw():
 		draw_line(_start_motion_pos - position, _end_motion_Pos - position, Color.white, 5)
 		
 		draw_line(Vector2.ZERO, Vector2(1, 1) * _distance * _direction, Color.dodgerblue, 3)
+
+func change_mode_kinematic():
+	set_deferred("mode", RigidBody2D.MODE_KINEMATIC)
+
+func change_mode_rigid():
+	set_deferred("mode", RigidBody2D.MODE_RIGID)

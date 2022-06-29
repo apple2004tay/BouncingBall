@@ -69,19 +69,17 @@ position = Vector2( 1, 640 )
 shape = SubResource( 1 )
 
 [node name="Bottom" type="StaticBody2D" parent="."]
-position = Vector2( -1, 0 )
+position = Vector2( 359, 1216 )
 collision_layer = 2
 physics_material_override = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="Bottom"]
-position = Vector2( 360, 1216 )
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 720, 128 )
 region_filter_clip = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
-position = Vector2( 360, 1216 )
 shape = SubResource( 2 )
 
 [node name="Platform" type="StaticBody2D" parent="."]

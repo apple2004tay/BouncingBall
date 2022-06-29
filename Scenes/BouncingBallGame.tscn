@@ -88,5 +88,6 @@ current = true
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 129, 1114 )
 
 [node name="Level1" parent="." instance=ExtResource( 5 )]

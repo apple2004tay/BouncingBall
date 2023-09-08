@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ball_blue_large.png-045d17e024e368d8f05bba07b5da46c8.stex"
+path="res://.import/character_0002.png-859e9154d20dbcaba30baa4b57f6caf0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ball_blue_large.png"
-dest_files=[ "res://.import/ball_blue_large.png-045d17e024e368d8f05bba07b5da46c8.stex" ]
+source_file="res://Assets/BouncingBallGameAssets/character_0002.png"
+dest_files=[ "res://.import/character_0002.png-859e9154d20dbcaba30baa4b57f6caf0.stex" ]
 
 [params]
 
